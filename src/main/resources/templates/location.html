@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="fragments::head"/>
+  <body>
+    
+   
+        <div  class="col-sm-12">
+ 
+    
+      <div    class="row">
+ 
+     <hr>
+  <div class="row" id="locationStatu"> 
+      
+  
+<div class="row">
+<div  class="col-sm-6">	
+ <ul   class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p>Longitude</p></li>
+</ul>
+<div th:each="entry: ${Location.longitude}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p id="longitude_label">VALUE</p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+<p th:text="${entry.value}"></p>
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="flongitude_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+ 
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="longitude_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+
+</div>
+</div>
+ 
+ 
+ <div  class="col-sm-6">	
+ <ul   class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p>Latitude</p></li>
+</ul>
+<div th:each="entry: ${Location.latitude}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p id="latitude_label">VALUE</p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+<p th:text="${entry.value}"></p>
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="latitude_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+ 
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="latitude_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+
+</div>
+</div>
+ 
+ 
+  <div  class="col-sm-12">	
+ <ul   class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p>Heading</p></li>
+</ul>
+<div th:each="entry: ${Location.heading}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p id="heading_label">VALUE</p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+<p th:text="${entry.value}"></p>
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="heading_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+ 
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="heading_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+
+</div>
+</div>
+ 
+
+</div>
+    
+    </div>
+
+ 
+ 
+    
+    
+    
+    </div>
+  </div>
+    </div>
+ 
+ </body>
+</html>

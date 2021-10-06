@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="fragments::head"/>
+  <body>
+    
+<header th:replace="fragments::header"></header>
+
+<div class="container-fluid">
+  <div class="row">
+<nav th:replace="fragments::sideMenu"></nav>
+
+    <main  class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <div th:if="${Vehicle.id != ''}" class="container">
+  <div class="row">
+   <div  class="col-sm-12">
+  <h1 th:if="${Vehicle.id != ''}" th:text="${Vehicle.id}" ></h1>
+ <div th:if="${ #lists.isEmpty(Vehicle)}" class="alert alert-primary d-flex align-items-center col-sm-12" role="alert">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </svg>
+ 
+  Vehicle list is empty!
+  </div>
+  
+  
+</div>
+
+    <div class="col-sm-8">
+        <img style="height:100%!important" class="card-img-top" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17a06c6e350%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17a06c6e350%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22106.68333435058594%22%20y%3D%2295.7%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"alt="Card image cap">
+      
+    
+    </div>
+    <div class="col-sm-4">
+    
+    <ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">ID </li>
+  <li class="list-group-item col"><a  th:if="${Vehicle.id != ''}" th:text="${Vehicle.id}"  th:href="${'/vehicle/'+Vehicle.id}"></a></li>
+</ul>
+    <ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">License Plate </li>
+  <li class="list-group-item col"><p  th:if="${Vehicle.licenseplate != ''}" th:text="${Vehicle.licenseplate}"></p></li>
+</ul>
+        <ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Finorvin </li>
+  <li class="list-group-item col"><p  th:if="${Vehicle.finorvin != ''}" th:text="${Vehicle.finorvin}"></p></li>
+</ul>
+        <ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Nickname </li>
+  <li class="list-group-item col"><p  th:if="${Vehicle.nickname != ''}" th:text="${Vehicle.nickname}"></p></li>
+</ul>
+            <ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Color Name </li>
+  <li class="list-group-item col"><p  th:if="${Vehicle.colorname!= ''}" th:text="${Vehicle.colorname}"></p></li>
+</ul>
+            <ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Model Year </li>
+  <li class="list-group-item col"><p  th:if="${Vehicle.modelyear!= ''}" th:text="${Vehicle.modelyear}"></p></li>
+</ul>
+            <ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Fuel Type </li>
+  <li class="list-group-item col"><p  th:if="${Vehicle.fueltype!= ''}" th:text="${Vehicle.fueltype}"></p></li>
+</ul>
+            <ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Power Hp </li>
+  <li class="list-group-item col"><p  th:if="${Vehicle.powerhp!= ''}" th:text="${Vehicle.powerhp}"></p></li>
+</ul>
+            <ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Power Kw </li>
+  <li class="list-group-item col"><p  th:if="${Vehicle.powerkw!= ''}" th:text="${Vehicle.powerkw}"></p></li>
+</ul>
+            <ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Number Of Doors</li>
+  <li class="list-group-item col"><p  th:if="${Vehicle.numberofdoors!= ''}" th:text="${Vehicle.numberofdoors}"></p></li>
+</ul>
+            <ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Number Of Seats</li>
+  <li class="list-group-item col"><p  th:if="${Vehicle.numberofseats!= ''}" th:text="${Vehicle.numberofseats}"></p></li>
+</ul>
+    </div>
+    
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#doorStatus" aria-expanded="true" aria-controls="doorStatus">
+        DOORS
+        </button>
+      </h5>
+    </div>
+   
+
+    <div id="doorStatus" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+       
+       <!-- DOORS STATUS BEGIN--->
+          <div  class="col-sm-12">
+        
+ 
+    
+      <div    class="row">
+         <div class="col-12">
+         
+         <div class="row">
+                  <div class="col"><button  command="LOCK" id="btnLockTheDoors" type="button" class="btn btn-primary btn-lg btn-block w-100 doorStatuFlag">Lock the All doors</button></div>
+           <div class="col"><button command="UNLOCK" id="btnUnlockTheDoors" type="button" class="btn btn-primary btn-lg btn-block w-100 doorStatuFlag">Unlock the All doors</button></div>
+       
+         </div>
+  </div>
+     <hr>
+  <div class="row" id="doorsStatus"> 
+ 
+    <div class="fa-3x loadingBox col-md-12">
+ 
+  <i class="fas fa-sync fa-spin"></i>
+ 
+</div>
+    
+    </div>
+  </div>
+    </div>
+    <!--  DOORS STATUS END -->
+       
+      </div>
+    </div>
+  </div>
+  
+    <div class="card">
+    <div class="card-header" id="tires_header">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#tires" aria-expanded="true" aria-controls="tires">
+          TIRES
+        </button>
+      </h5>
+    </div>
+
+    <div id="tires" class="collapse" aria-labelledby="headingOne" >
+      <div class="card-body">
+ <!--  TIRES BEGIN -->
+     <div id="tiresStatu" class="col-12">
+ 
+ 
+    <div class="fa-3x loadingBox col-md-12">
+ 
+  <i class="fas fa-sync fa-spin"></i>
+ 
+</div>
+    </div>
+ <!--  TIRES  END -->
+       </div>
+    </div>
+  </div>
+  
+  
+    <div class="card-header" id="headingFuel">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#fuelSection" aria-expanded="true" aria-controls="fuelSection">
+          FUEL
+        </button>
+      </h5>
+    </div>
+
+    <div id="fuelSection" class="collapse" aria-labelledby="headingFuel"  >
+      <div class="card-body">
+     <div id="fuelStatu" class="col-12">
+ 
+ 
+    <div class="fa-3x loadingBox col-md-12">
+ 
+  <i class="fas fa-sync fa-spin"></i>
+ 
+</div>
+    </div>
+      </div>
+    </div>
+    
+    
+    <hr>
+    
+        <div class="card-header" id="headingLocation">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#locationSection" aria-expanded="true" aria-controls="locationSection">
+          LOCATION
+        </button>
+      </h5>
+    </div>
+
+    <div id="locationSection" class="collapse" aria-labelledby="headingLocation"  >
+      <div class="card-body">
+     <div id="locationStatu" class="col-12">
+ 
+ 
+    <div class="fa-3x loadingBox col-md-12">
+ 
+  <i class="fas fa-sync fa-spin"></i>
+ 
+</div>
+    </div>
+      </div>
+    </div>
+    
+    
+  </div>
+  
+  </div>
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+
+	  </div>
+    </main>
+  </div>
+</div>
+<div id="response"></div>
+<input id="vehicleId" th:value="${vehicleId}" type="hidden">
+
+
+
+<div th:replace="fragments::footer"></div>
+ 
+    <script type="text/javascript">
+    var callDoorsStatus = null;
+    function loadDoorsStatu(){
+    	   var url="/doors/"+$("#vehicleId").val();
+        	$('#doorsStatus').load(url+' #doorsStatus');
+    }
+    function loadTires(){
+ 	   var url="/tires/"+$("#vehicleId").val();
+     	$('#tiresStatu').load(url+' #tiresStatu');
+ }
+    
+    function loadFuel(){
+  	   var url="/fuel/"+$("#vehicleId").val();
+      	$('#fuelStatu').load(url+' #fuelStatu');
+  }
+    
+    function loadLocation(){
+   	   var url="/location/"+$("#vehicleId").val();
+       	$('#locationStatu').load(url+' #locationStatu');
+   }
+    
+    
+    $(document).ready(function () {
+    
+        $(".doorStatuFlag").click(function(){
+     	   elementClicked = true;
+ 
+     	   
+     	  $.ajax({
+     	        url: "/doors/status/"+$("#vehicleId").val()+"",
+     	        type: "GET",
+     	        data: 'command=' +$(this).attr("command") ,
+     	        success: function (data) {
+     	        // alert(JSON.stringify(data));
+     	   
+     	   var url="/doors/"+$("#vehicleId").val();
+     	        	$('#doorsStatus').load(url+' #doorsStatus');
+     	            
+     	        },
+     	        error: function(jqXHR, textStatus, errorThrown) {
+     	           console.log(textStatus, errorThrown);
+     	        }
+     	    });
+     	  
+     	});
+        
+	});
+    
+    callDoorsStatus = setInterval(function() {  // no "var" here
+    	loadDoorsStatu();
+    }, 5000);
+
+ 
+    
+    $('#doorStatus').on('shown.bs.collapse', function () {
+    	  callDoorsStatus = setInterval(function() {  // no "var" here
+    	    	loadDoorsStatu();
+    	    }, 5000);
+    	
+    });
+
+    	$('#doorStatus').on('hidden.bs.collapse', function () {
+    		
+    		 
+    		clearInterval(callDoorsStatus);
+    	});
+    	
+    	
+        
+        $('#tires').on('shown.bs.collapse', function () {
+        	loadTires();
+        	});
+
+        	$('#tires').on('hidden.bs.collapse', function () {
+        		
+        	});
+        	
+            $('#fuelSection').on('shown.bs.collapse', function () {
+            	loadFuel();
+            	});
+
+            	$('#fuelSection').on('hidden.bs.collapse', function () {
+            		
+            	});
+            	
+            	
+                $('#locationSection').on('shown.bs.collapse', function () {
+                	loadLocation();
+                	});
+
+                	$('#locationSection').on('hidden.bs.collapse', function () {
+                		
+                	});
+    </script>
+    
+ </body>
+</html>

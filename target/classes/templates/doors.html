@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="fragments::head"/>
+  <body>
+    
+   
+        <div  class="col-sm-12">
+        
+ 
+        
+        
+        
+    <h2>Doors</h2>
+    
+      <div    class="row">
+         <div class="col-12">
+         
+         <div class="row">
+                  <div class="col"><button  command="LOCK" id="btnLockTheDoors" type="button" class="btn btn-primary btn-lg btn-block w-100 doorStatuFlag">Lock the All doors</button></div>
+           <div class="col"><button command="UNLOCK" id="btnUnlockTheDoors" type="button" class="btn btn-primary btn-lg btn-block w-100 doorStatuFlag">Unlock the All doors</button></div>
+       
+         </div>
+  </div>
+     <hr>
+  <div class="row" id="doorsStatus"> 
+      
+    <div class="col-6"><h4>Front - Left</h4>
+<div class="row">
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Door Statu</li>
+</ul>
+<div th:each="entry: ${Doors.doorstatusfrontleft}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p  id="doorstatusfrontleft_label"  th:text="${entry.value}"></p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+  <input th:checked="${entry.value} == OPEN"  disabled class="form-check-input" type="checkbox" id="doorstatusfrontleft_value">
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="doorstatusfrontleft_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="doorstatusfrontleft_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+</div>
+</div>
+ 
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Door Lock Statu</li>
+</ul>
+<div th:each="entry: ${Doors.doorlockstatusfrontleft}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p   th:text="${entry.value}"></p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+  <input th:checked="${entry.value} == LOCKED"  disabled class="form-check-input" type="checkbox" id="doorlockstatusfrontleft_value">
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="doorlockstatusfrontleft_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="doorlockstatusfrontleft_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+</div>
+</div>
+
+</div>
+    
+    </div>
+
+
+<div class="col-6"><h4>Front - Right</h4>
+<div class="row">
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Door Statu</li>
+</ul>
+<div th:each="entry: ${Doors.doorstatusfrontright}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p  id="doorstatusfrontright_label"  th:text="${entry.value}"></p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+  <input th:checked="${entry.value} == OPEN"  disabled class="form-check-input" type="checkbox" id="doorstatusfrontright_value">
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="doorstatusfrontright_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="doorstatusfrontright_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+</div>
+</div>
+ 
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Door Lock Statu</li>
+</ul>
+<div th:each="entry: ${Doors.doorlockstatusfrontright}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p id="doorlockstatusfrontright_label"   th:text="${entry.value}"></p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+  <input th:checked="${entry.value} == LOCKED"  disabled class="form-check-input" type="checkbox" id="doorlockstatusfrontright_value">
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="doorlockstatusfrontright_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="doorlockstatusfrontright_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+</div>
+</div>
+
+</div>
+    
+    </div>
+
+<div class="col-6"><h4>Rear - Left</h4>
+<div class="row">
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Door Statu</li>
+</ul>
+<div th:each="entry: ${Doors.doorstatusrearleft}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p id="doorstatusrearleft_label"  th:text="${entry.value}"></p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+  <input th:checked="${entry.value} == OPEN"  disabled class="form-check-input" type="checkbox" id="doorstatusrearleft_value">
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="doorstatusrearleft_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="doorstatusrearleft_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+</div>
+</div>
+ 
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Door Lock Statu</li>
+</ul>
+<div th:each="entry: ${Doors.doorlockstatusrearleft}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p id="doorlockstatusrearleft_label"  th:text="${entry.value}"></p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+  <input th:checked="${entry.value} == LOCKED"  disabled class="form-check-input" type="checkbox" id="doorlockstatusrearleft_value">
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="doorlockstatusrearleft_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="doorlockstatusrearleft_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+</div>
+</div>
+
+</div>
+    
+    </div>
+    
+    <div class="col-6"><h4>Rear - Right</h4>
+<div class="row">
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Door Statu</li>
+</ul>
+<div th:each="entry: ${Doors.doorstatusrearright}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p id="doorstatusrearright_label"  th:text="${entry.value}"></p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+  <input th:checked="${entry.value} == OPEN"  disabled class="form-check-input" type="checkbox" id="doorstatusrearright_value">
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="doorstatusrearright_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="doorstatusrearright_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+</div>
+</div>
+ 
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Door Lock Statu</li>
+</ul>
+<div th:each="entry: ${Doors.doorlockstatusrearright}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p id="doorlockstatusrearright_label"  th:text="${entry.value}"></p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+  <input th:checked="${entry.value} == LOCKED"  disabled class="form-check-input" type="checkbox" id="doorlockstatusrearright_value">
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="doorlockstatusrearright_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="doorlockstatusrearright_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+</div>
+</div>
+
+</div>
+    
+    </div>
+    
+    
+    
+    
+    </div>
+  </div>
+    </div>
+ 
+ </body>
+</html>

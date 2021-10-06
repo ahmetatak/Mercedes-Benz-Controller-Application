@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="fragments::head"/>
+  <body>
+    
+   
+        <div  class="col-sm-12">
+ 
+    
+      <div    class="row">
+ 
+     <hr>
+  <div class="row" id="tiresStatu"> 
+      
+    <div class="col-6"><h4>Front - Left</h4>
+<div class="row">
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Tire Pressure</li>
+</ul>
+<div th:each="entry: ${Tires.tirepressurefrontleft}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p  id="tirepressurefrontleft_label">VALUE</p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+<p th:text="${entry.value}"></p>
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="tirepressurefrontleft_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'unit'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Unit</li>
+  <li class="list-group-item col"><p id="tirepressurefrontleft_unit_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="tirepressurefrontleft_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+
+</div>
+</div>
+ 
+
+</div>
+    
+    </div>
+
+ 
+        <div class="col-6"><h4>Front - Right</h4>
+<div class="row">
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Tire Pressure</li>
+</ul>
+<div th:each="entry: ${Tires.tirepressurefrontright}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p  id="tirepressurefrontright_label">VALUE</p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+<p th:text="${entry.value}"></p>
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="tirepressurefrontright_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'unit'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Unit</li>
+  <li class="list-group-item col"><p id="tirepressurefrontright_unit_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="tirepressurefrontright_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+
+</div>
+</div>
+ 
+
+</div>
+    
+    </div>
+    
+            <div class="col-6"><h4>Rear- Left</h4>
+<div class="row">
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Tire Pressure</li>
+</ul>
+<div th:each="entry: ${Tires.tirepressurerearleft}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p  id="tirepressurerearleft_label">VALUE</p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+<p th:text="${entry.value}"></p>
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="tirepressurerearleft_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'unit'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Unit</li>
+  <li class="list-group-item col"><p id="tirepressurerearleft_unit_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="tirepressurerearleft_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+
+</div>
+</div>
+ 
+
+</div>
+    
+    </div>
+ 
+                <div class="col-6"><h4>Rear- Right</h4>
+<div class="row">
+<div  class="col-sm-12">	
+ 
+<ul  class="list-group list-group-horizontal">
+  <li class="list-group-item col fw-bold">Tire Pressure</li>
+</ul>
+<div th:each="entry: ${Tires.tirepressurerearright}">
+<ul  th:if="${entry.key== 'value'}" class="list-group list-group-horizontal">
+  <li class="list-group-item col "><p  id="tirepressurerearright_label">VALUE</p></li>
+  <li class="list-group-item col">
+ <div class="form-check form-switch">
+<p th:text="${entry.value}"></p>
+</div>
+  
+  </li>
+</ul>
+<ul th:if="${entry.key== 'retrievalstatus'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Retrieval Status:</li>
+  <li class="list-group-item col"><p id="tirepressurerearright_retival_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'unit'}"  class="list-group list-group-horizontal">
+  <li class="list-group-item col ">Unit</li>
+  <li class="list-group-item col"><p id="tirepressurerearright_unit_value"  th:text="${entry.value}"></p></li>
+</ul>
+<ul th:if="${entry.key== 'timestamp'}"  class="list-group list-group-horizontal">
+ 
+  <li class="list-group-item col"><p id="tirepressurerearright_timestamp_value"  th:text="${entry.value}"></p></li>
+</ul>
+
+</div>
+</div>
+ 
+
+</div>
+    
+    </div>
+    
+    
+    
+    </div>
+  </div>
+    </div>
+ 
+ </body>
+</html>

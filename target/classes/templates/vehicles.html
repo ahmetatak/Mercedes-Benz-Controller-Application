@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head th:replace="fragments::head"/>
+  <body>
+    
+<header th:replace="fragments::header"></header>
+
+<div class="container-fluid">
+  <div class="row">
+<nav th:replace="fragments::sideMenu"></nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <div class="row" th:if="${not #lists.isEmpty(Vehicles)}">
+   <h1 class="h2">Vehicles</h1>
+  
+ <div class="col-3"  th:each="vehicle : ${Vehicles}">
+ <a th:href="'/vehicle/' +  ${vehicle.id}">
+ <div class="card col-12" style="width: 20rem;">
+  <img class="card-img-top" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17a06c6e350%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17a06c6e350%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22106.68333435058594%22%20y%3D%2295.7%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"alt="Card image cap">
+  <div class="card-body">
+    <h5 th:text="'ID : ' +  ${vehicle.id}" class="card-title"></h5>
+    <p th:text="'License Plate : ' + ${vehicle.licenseplate}" class="card-text"></p>
+        <p th:text="'Finorvin : ' + ${vehicle.finorvin}" class="card-text"></p>
+ 
+  </div>
+</div>
+ </a>
+ </div>
+ 
+ 
+ </div>
+ 
+ 
+
+
+	  </div>
+    </main>
+  </div>
+</div>
+
+<div th:replace="fragments::footer"></div>
+ </body>
+</html>
