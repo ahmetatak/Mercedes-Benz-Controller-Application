@@ -1,6 +1,6 @@
 
 # Mercedes-Benz Controller Application
-The Applications allows to the user to connect mercedes-benz API and get vehicle information which vehicle belongs to user. 
+The Applications allows to the user to connect mercedes-benz API and get the vehicle information which vehicle belongs to user. 
 So User can track & control the vehicle via the application.
 
 
