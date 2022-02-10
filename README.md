@@ -8,7 +8,7 @@ So User can track & control the vehicle via the application.
 ### 1-)Setup Configration
 Get an Developer account from MB developer page and create an API in MB developer console. [Mercedes Benz Developer Page](https://developer.mercedes-benz.com/news/our-first-experimental-api) 
 
-Open configration file which is located in external library package. exLib and fill the corrent information.
+Open the configuration file which is located in external library package. exLib and fill with the correct information.
 
 <img width="800px" src="https://user-images.githubusercontent.com/3717312/136297075-88fa587b-2977-405b-b549-e9431f4dd836.jpg">
 
