@@ -5,7 +5,6 @@ So User can track & control the vehicle via the application.
 
 
 
-https://user-images.githubusercontent.com/3717312/186878920-6df6ecde-3613-4c39-892e-e95e09027b5a.mp4
 
 
 # Setup
